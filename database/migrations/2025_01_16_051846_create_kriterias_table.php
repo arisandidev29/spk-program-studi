@@ -17,10 +17,9 @@ return new class extends Migration
             $table->string('name')->nullable(false);
             $table->text('desc');
             $table->unsignedBigInteger('bobot_id')->nullable(false);
-            $table->unsignedBigInteger('category_id')->nullable(false);
+            $table->enum('kategori',['benefit','cost']);
 
             $table->foreign('bobot_id')->references('id')->on('bobots');
-            $table->foreign('category_id')->references('id')->on('categoris');
             $table->timestamps();
         });
     }

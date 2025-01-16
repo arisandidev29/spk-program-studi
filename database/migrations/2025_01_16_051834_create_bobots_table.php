@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('bobots', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->integer('nilai')->nullable(false);
             $table->double('normalisasi')->nullable(false);
             $table->timestamps();

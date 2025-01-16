@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Kriteria extends Model
 {
@@ -13,4 +15,15 @@ class Kriteria extends Model
         'bobot_id',
         'category_id'
     ];
+
+    public function bobot():BelongsTo {
+        return $this->belongsTo(Bobot::class,'bobot_id','id','bobots');
+    }
+
+    public function Jawaban(): HasMany {
+        return $this->hasMany(Jawaban::class,'kriteria_id','id');
+    }
+
+    
 }
+ 
