@@ -13,7 +13,7 @@ class Kriteria extends Model
         'name',
         'desc',
         'bobot_id',
-        'category_id'
+        'kategori'
     ];
 
     public function bobot():BelongsTo {

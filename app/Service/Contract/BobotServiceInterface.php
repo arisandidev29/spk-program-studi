@@ -13,6 +13,7 @@ interface BobotServiceInterface {
 
     function DeleteBobot(int $id) :bool;
 
+    function normalizationBobot();
     function normalizationNilai(int $nilai) :float;
 }
 

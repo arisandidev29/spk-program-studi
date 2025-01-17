@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Bobot;
+use App\Service\Contract\BobotServiceInterface;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -11,7 +12,7 @@ class BobotSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run(): void
+    public function run(BobotServiceInterface $bobotService): void
     {
         $bobots = [
             [
@@ -37,5 +38,7 @@ class BobotSeeder extends Seeder
         ];
 
         Bobot::query()->insert($bobots);
+
+        $bobotService->normalizationBobot();
     }
 }

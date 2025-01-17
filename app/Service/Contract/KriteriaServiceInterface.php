@@ -1,14 +1,17 @@
 <?php
 namespace App\Service\Contract;
 
+use App\Models\Kriteria;
+use Illuminate\Database\Eloquent\Collection;
+
 interface KriteriaServiceInterface {
-    function GetAllKriteria();
+    function GetAllKriteria() : Collection;
 
-    function CreateKriteria();
+    function CreateKriteria(array $data);
 
-    function UpdateKriteria();
+    function UpdateKriteria(string $id , array $data);
 
-    function DeleteKriteria();
+    function DeleteKriteria(string $id);
 }
 
 ?>
