@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('nilai')->nullable(false);
-            $table->double('normalisasi')->nullable(false);
+            $table->double('normalisasi')->nullable(false)->default(0);
             $table->timestamps();
         });
     }

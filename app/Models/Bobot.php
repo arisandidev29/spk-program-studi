@@ -9,7 +9,7 @@ class Bobot extends Model
 {
     protected $table = 'bobots';
 
-    public $fillable = ['nilai','normalisasi'];
+    public $fillable = ['name','nilai','normalisasi'];
 
     public function kriteria():HasMany {
         return $this->hasMany(Kriteria::class,'bobot_id','id');

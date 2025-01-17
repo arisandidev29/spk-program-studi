@@ -17,27 +17,22 @@ class BobotSeeder extends Seeder
             [
                 'name' => 'sangat penting',
                 'nilai' => 50,
-                'normalisasi' => 0.5 
             ],
             [
                 'name' => 'penting',
                 'nilai' => 30,
-                'normalisasi' => 0.3 
             ],
             [
                 'name' => 'cukup penting',
                 'nilai' => 20,
-                'normalisasi' => 0.2 
             ],
             [
                 'name' => 'kurang penting',
                 'nilai' => 10,
-                'normalisasi' => 0.1 
             ],
             [
                 'name' => 'tidak penting',
                 'nilai' => 0,
-                'normalisasi' => 0 
             ],
         ];
 
