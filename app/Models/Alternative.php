@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Alternative extends Model
 {
-    protected $table = 'alternative';
+    protected $table = 'alternatives';
     public $fillable = ['name','desc'];
 
     public function jawaban():HasMany {
