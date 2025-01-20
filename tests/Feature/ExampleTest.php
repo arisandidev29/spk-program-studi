@@ -40,12 +40,12 @@ class ExampleTest extends TestCase
             JawabanSeeder::class
         ]);
         // dump(Jawaban::all());
-        $resultt = Jawaban::whereHas('user', function($user) {
-            $user->where('name','arisandi');
+        $resultt = Jawaban::whereHas('user', function ($user) {
+            $user->where('name', 'arisandi');
         })->get();
 
-        $result2 = Jawaban::with(['user' => function($user) {
-            $user->where('name','arisandi');
+        $result2 = Jawaban::with(['user' => function ($user) {
+            $user->where('name', 'arisandi');
         }])->get();
 
         // dump($result2->toArray(),$resultt->toArray());
@@ -54,6 +54,18 @@ class ExampleTest extends TestCase
 
         $jawaban = new Jawaban();
 
-        dump($jawaban->with(['user'])->user()->where('name','arisandi')->get());
+        dump($jawaban->with(['user'])->user()->where('name', 'arisandi')->get());
+    }
+
+    public function testVector(): void
+    {
+        $this->seed([BobotSeeder::class]);
+
+        $bobot = Bobot::all();
+        $newBobot = $bobot->map(function ($item) {
+            return $item->nilai * $item->normalisasi;
+        })->reduce(fn($item) => $item * $item );
+
+        dump($newBobot);
     }
 }
