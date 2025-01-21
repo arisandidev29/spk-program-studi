@@ -16,10 +16,12 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable(false);
             $table->unsignedBigInteger('alternative_id')->nullable(false);
+            $table->unsignedBigInteger('vektor_id')->nullable(false);
             $table->double('nilai_s');
             $table->double('nilai_preferensi');
             $table->timestamps();
 
+            $table->foreign('vektor_id')->references('id')->on('vektor');
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('alternative_id')->references('id')->on('alternatives');
 
